@@ -7,6 +7,7 @@ public class countDays {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Which the month that you want to count days? ");
         int month = scanner.nextInt();
+        String days;
         switch (month) {
             case 1:
             case 3:
@@ -15,14 +16,25 @@ public class countDays {
             case 8:
             case 10:
             case 12:
-                System.out.println("The month '" + month + "' has 31 days!");
+                days = "31";
                 break;
             case 2:
-                System.out.println("The month '2' has 28 or 29 days!");
+                days = "28 or 29";
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                days = "30";
                 break;
             default:
-                System.out.println("The month '" + month + "' has 30 days!");
+                days = "";
                 break;
+        }
+        if(!days.equals("")) {
+            System.out.println("The month '" + month + "' has " + days + " days!");
+        } else {
+            System.out.println("Invalid input!");
         }
     }
 }
