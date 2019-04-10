@@ -155,7 +155,8 @@ public class numberToString {
             System.out.println( ntoString(num));
             System.out.println("===============================\nYou want continue? \nEnter key Y to continue, any key to exit?");
             keyt = scanner.next();
-        } while ( keyt == "Y" || keyt == "y");
+            System.out.println("===============================");
+        } while (keyt.equals("Y") || keyt.equals("y"));
 
     }
 
