@@ -24,10 +24,6 @@ public class checkLeapYear {
                 System.out.println("This year you check is NOT leap year !!!");
             }
             System.out.println("===============================\nYou want continue? \nEnter key Y to continue, any key to exit?");
-
-            //dong them cua Nam day!!!
-            System.out.println("===============================\nYou want continue? \nEnter key Y to continue, any key to exit?");
-
             keyt = scanner.next();
             System.out.println("===============================");
         } while (keyt.equals("Y") || keyt.equals("y"));
