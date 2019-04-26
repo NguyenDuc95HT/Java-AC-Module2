@@ -29,7 +29,7 @@ public class findMines {
 
     public int[] makeMine () {
         Random rd = new Random();
-        int amount = (size * size) / 6;
+        int amount = (int)((size * size) / 6.4);
         int[] arr = new int[amount];
         for (int i = 0; i < amount; i++) {
             arr[i] = 1 + rd.nextInt(size * size - 1);
@@ -39,8 +39,6 @@ public class findMines {
                 }
                 while (arr[i] == arr[j]);
             }
-            System.out.println(arr[i]);
-
         }
         return arr;
     }
@@ -53,7 +51,7 @@ public class findMines {
                     arr[i][j] = 0;
             }
         }
-        for (int index = 0; index < arrMine.length; index++) {
+        for (int index = 0; index < arrMine.length - 1; index++) {
             arr[arrMine[index] / size][arrMine[index] % size] = -1;
         }
         for (int i = 0; i < size; i++) {
@@ -197,9 +195,7 @@ public class findMines {
                                 arr[i][j] += 1;
                             }
                         }
-
                     }
-
                 }
             }
         }
@@ -208,7 +204,7 @@ public class findMines {
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.print("Enter size of matrix: >_ ");
+        System.out.print("Enter size of matrix:~$ ");
         int size = scan.nextInt();
         findMines map = new findMines(size);
         int[][] arr = map.mekeMapMine();
