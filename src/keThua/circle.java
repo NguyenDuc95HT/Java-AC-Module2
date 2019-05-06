@@ -1,6 +1,6 @@
 package keThua;
 
-public class circle extends shape {
+public class circle extends shape implements Resizeable {
     private double radius = 1.0;
 
     public circle () {
@@ -39,6 +39,11 @@ public class circle extends shape {
                 + ", which is a subclass of "
                 + super.toString();
     }
+
+    @Override
+    public void resize(double percent) {
+        setRadius(Math.sqrt(getArae() * percent / Math.PI));
+    }
 }
 class CircleTest {
     public static void main(String[] args) {
@@ -49,6 +54,8 @@ class CircleTest {
         System.out.println(cir);
 
         cir = new circle(3.5, "indigo", false);
+        System.out.println(cir);
+        cir.resize(1.5);
         System.out.println(cir);
     }
 }

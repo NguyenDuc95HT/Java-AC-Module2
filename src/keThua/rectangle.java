@@ -1,6 +1,6 @@
 package keThua;
 
-public class rectangle extends shape {
+public class rectangle extends shape implements Resizeable {
     private double width = 1.0;
     private double length = 1.0;
 
@@ -47,6 +47,11 @@ public class rectangle extends shape {
     public String toString() {
         return "A Rectangle with width= " + getWidth() + " and length= " + getLength() + ", which is a subclass of " + super.toString();
     }
+
+    @Override
+    public void resize(double percent) {
+        setWidth((getArea() * percent) / getLength());
+    }
 }
 class RectangleTest {
     public static void main(String[] args) {
@@ -57,6 +62,8 @@ class RectangleTest {
         System.out.println(rec);
 
         rec = new rectangle(2.5, 3.8, "orange", true);
+        System.out.println(rec);
+        rec.resize(1.5);
         System.out.println(rec);
     }
 }
